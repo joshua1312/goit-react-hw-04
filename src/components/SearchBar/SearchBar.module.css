@@ -5,18 +5,13 @@
 
 .searchBarInputContainer {
     position: relative;
-    /* Позиціюємо контейнер для іконки */
 }
 
 .searchBarIcon {
     position: absolute;
-    /* Розміщуємо іконку поверх поля вводу */
     left: 10px;
-    /* Відстань від лівого краю */
     top: 50%;
-    /* Вертикальне центрування */
     transform: translateY(-50%);
-    /* Центрування по вертикалі */
     color: gray;
     cursor: pointer;
 }

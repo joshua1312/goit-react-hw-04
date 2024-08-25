@@ -8,9 +8,9 @@
     flex-wrap: wrap;
     row-gap: 24px;
     justify-content: space-between;
-    /* Рівномірний розподіл елементів */
     align-items: center;
     cursor: pointer;
+    
 }
 
 

@@ -9,7 +9,7 @@
 
 .header {
   box-sizing: border-box;
-  background-color: blueviolet;
+  background-color: rgba(15, 41, 147, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;

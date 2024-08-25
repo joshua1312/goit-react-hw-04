@@ -6,7 +6,7 @@ import ImageModal from "./components/ImageModal/ImageModal";
 import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
-import { fetchImages } from "./gallary-api";
+import { fetchImages } from "./unsplash-api";
 import styles from "./App.module.css";
 const { container, header } = styles;
 
@@ -21,7 +21,7 @@ function App({ errorMessage }) {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const imagesContainerRef = useRef(null); // Створення рефу
+  const imagesContainerRef = useRef(null);
 
   const handleSearch = async (newTopic) => {
     setImages([]);

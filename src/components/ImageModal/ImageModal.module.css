@@ -14,12 +14,10 @@
     align-items: center;
     object-fit: contain;
     z-index: 1001;
-    /* Додаємо z-index для модального вікна */
 }
 
 .imageModalOverlay {
     background-color: rgba(28, 28, 28, 0.9);
-    /* Фон оверлею */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +27,6 @@
     right: 0;
     bottom: 0;
     z-index: 1000;
-    /* Додаємо z-index для видимості */
     cursor: pointer;
 }
 
@@ -40,8 +37,7 @@
 }
 
 .imageModalContent img {
-    max-height: 80vh;
-    max-width: 80vw;
+    max-height: 95vh;
+    max-width: 95vw;
     object-fit: contain;
-    /* Забезпечує пропорційне масштабування */
 }
