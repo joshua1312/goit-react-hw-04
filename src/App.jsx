@@ -10,7 +10,7 @@ import { fetchImages } from "./unsplash-api";
 import styles from "./App.module.css";
 const { container, header } = styles;
 
-function App({ errorMessage }) {
+function App() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -36,34 +36,33 @@ function App({ errorMessage }) {
   };
 
   useEffect(() => {
-    if (!topic) return; // Перевірка на порожній topic
+    if (!topic) return;
     async function getImages() {
       try {
         setLoading(true);
         setError(false);
-        const data = await fetchImages(topic, page, errorMessage);
+        const data = await fetchImages(topic, page);
         setImages((prevImages) => {
           return [...prevImages, ...data.results];
         });
         setTotalPages(data.total_pages);
         if (page === Math.min(data.total_pages, 200)) {
           toast.success(
-            errorMessage ||
+
             "We're sorry, but you've reached the end of search results."
           );
         }
         if (data.results.length === 0) {
           toast.error(
-            errorMessage ||
+
             "Sorry, there are no images matching your search query. Please try again!"
           );
         }
-
+        // console.log(data.total_pages);
         setLoadMore(page < Math.min(data.total_pages, 200)); // Set loadMore only if there are more pages to load
       } catch (error) {
         setError(true);
         toast.error(
-          errorMessage ||
           "Oops! An error occurred while fetching the images. Please try again!"
         );
       } finally {
@@ -71,7 +70,7 @@ function App({ errorMessage }) {
       }
     }
     getImages();
-  }, [topic, page, errorMessage]);
+  }, [topic, page]);
 
   // Прокрутка вниз до контейнера зображень після оновлення зображень
 
